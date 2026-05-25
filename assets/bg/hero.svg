@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <radialGradient id="skyGrad" cx="50%" cy="40%" r="70%">
+            <stop offset="0%" stop-color="#1a3856" stop-opacity="0.9"/>
+            <stop offset="40%" stop-color="#0a1428" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#050810" stop-opacity="1"/>
+        </radialGradient>
+        <linearGradient id="mtFar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a4868" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#0a1428" stop-opacity="0.9"/>
+        </linearGradient>
+        <linearGradient id="mtMid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1a2c48" stop-opacity="0.75"/>
+            <stop offset="100%" stop-color="#050810" stop-opacity="1"/>
+        </linearGradient>
+        <linearGradient id="mtNear" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0c1a30" stop-opacity="0.95"/>
+            <stop offset="100%" stop-color="#03060c" stop-opacity="1"/>
+        </linearGradient>
+        <radialGradient id="moonGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#8be9fd" stop-opacity="0.9"/>
+            <stop offset="40%" stop-color="#5dd4dc" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#5dd4dc" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="orbGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#a8e8ff" stop-opacity="1"/>
+            <stop offset="50%" stop-color="#5dd4dc" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#5dd4dc" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="6"/>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+    </defs>
+
+    <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+
+    <!-- 星点 -->
+    <g opacity="0.6">
+        <circle cx="180" cy="120" r="1" fill="#fff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="320" cy="80" r="1.5" fill="#fff"><animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="540" cy="150" r="1" fill="#8be9fd"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/></circle>
+        <circle cx="780" cy="90" r="1" fill="#fff"><animate attributeName="opacity" values="1;0.3;1" dur="3.5s" repeatCount="indefinite"/></circle>
+        <circle cx="1020" cy="180" r="1.5" fill="#fff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="1280" cy="60" r="1" fill="#fff"><animate attributeName="opacity" values="1;0.3;1" dur="2.8s" repeatCount="indefinite"/></circle>
+        <circle cx="1520" cy="120" r="1.5" fill="#d4a574"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="1720" cy="200" r="1" fill="#fff"><animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="60" cy="300" r="1" fill="#fff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" repeatCount="indefinite"/></circle>
+        <circle cx="1860" cy="320" r="1.5" fill="#8be9fd"><animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- 月亮/能量球 -->
+    <g transform="translate(1380, 280)">
+        <circle r="160" fill="url(#moonGrad)"/>
+        <circle r="80" fill="#0a1428" opacity="0.6"/>
+        <circle r="70" fill="none" stroke="#5dd4dc" stroke-width="0.5" opacity="0.5"/>
+        <circle r="90" fill="none" stroke="#5dd4dc" stroke-width="0.3" opacity="0.3"/>
+        <circle r="110" fill="none" stroke="#5dd4dc" stroke-width="0.3" opacity="0.2"/>
+        <g opacity="0.6">
+            <circle r="120" fill="none" stroke="#8be9fd" stroke-width="0.5" stroke-dasharray="4 8">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+    </g>
+
+    <!-- 远山 -->
+    <path d="M0,720 L120,580 L220,640 L340,520 L460,600 L580,490 L720,580 L860,510 L1020,590 L1180,500 L1320,580 L1480,510 L1640,600 L1800,520 L1920,560 L1920,1080 L0,1080 Z" fill="url(#mtFar)"/>
+
+    <!-- 中山 -->
+    <path d="M0,820 L100,720 L240,780 L380,680 L520,760 L680,690 L840,770 L1000,700 L1180,780 L1340,710 L1520,790 L1700,720 L1860,780 L1920,760 L1920,1080 L0,1080 Z" fill="url(#mtMid)"/>
+
+    <!-- 近山带建筑剪影 -->
+    <path d="M0,920 L60,860 L140,890 L260,820 L380,880 L500,840 L660,890 L820,830 L1000,890 L1160,840 L1320,890 L1480,830 L1640,880 L1800,840 L1920,870 L1920,1080 L0,1080 Z" fill="url(#mtNear)"/>
+
+    <!-- 远处塔/遗迹 -->
+    <g opacity="0.85" fill="#050810">
+        <rect x="850" y="680" width="14" height="180"/>
+        <polygon points="845,680 871,680 858,650"/>
+        <rect x="852" y="700" width="10" height="2" fill="#5dd4dc" opacity="0.8"/>
+        <rect x="852" y="730" width="10" height="2" fill="#5dd4dc" opacity="0.6"/>
+        <rect x="852" y="760" width="10" height="2" fill="#5dd4dc" opacity="0.6"/>
+        <rect x="852" y="790" width="10" height="2" fill="#5dd4dc" opacity="0.4"/>
+
+        <rect x="930" y="740" width="10" height="120"/>
+        <polygon points="927,740 943,740 935,720"/>
+
+        <rect x="1100" y="700" width="12" height="160"/>
+        <polygon points="1097,700 1115,700 1106,675"/>
+        <rect x="1103" y="720" width="8" height="2" fill="#d4a574" opacity="0.6"/>
+        <rect x="1103" y="750" width="8" height="2" fill="#d4a574" opacity="0.5"/>
+    </g>
+
+    <!-- 漂浮能量球 -->
+    <g filter="url(#glow)">
+        <circle cx="280" cy="500" r="6" fill="url(#orbGrad)">
+            <animate attributeName="cy" values="500;480;500" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="620" cy="620" r="5" fill="url(#orbGrad)">
+            <animate attributeName="cy" values="620;600;620" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1180" cy="540" r="7" fill="url(#orbGrad)">
+            <animate attributeName="cy" values="540;515;540" dur="4.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1500" cy="650" r="4" fill="url(#orbGrad)">
+            <animate attributeName="cy" values="650;630;650" dur="6s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1700" cy="480" r="5" fill="url(#orbGrad)">
+            <animate attributeName="cy" values="480;460;480" dur="5.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="420" cy="700" r="4" fill="url(#orbGrad)">
+            <animate attributeName="cy" values="700;680;700" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="900" cy="560" r="3" fill="url(#orbGrad)">
+            <animate attributeName="cy" values="560;540;560" dur="5s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- 雾气 -->
+    <ellipse cx="600" cy="900" rx="700" ry="80" fill="#5dd4dc" opacity="0.05">
+        <animate attributeName="cx" values="600;700;600" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="1400" cy="950" rx="800" ry="60" fill="#d4a574" opacity="0.04">
+        <animate attributeName="cx" values="1400;1300;1400" dur="25s" repeatCount="indefinite"/>
+    </ellipse>
+</svg>

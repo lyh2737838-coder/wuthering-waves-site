@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸣潮 Wuthering Waves | 库洛游戏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 加载屏 -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <svg viewBox="0 0 100 100" class="loader-svg">
+                    <circle cx="50" cy="50" r="45" class="loader-circle-bg"/>
+                    <circle cx="50" cy="50" r="45" class="loader-circle"/>
+                </svg>
+                <div class="loader-text">W</div>
+            </div>
+            <div class="loader-title">WUTHERING WAVES</div>
+            <div class="loader-subtitle">鸣 · 潮</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar" id="loaderBar"></div>
+            </div>
+            <div class="loader-percent" id="loaderPercent">0%</div>
+        </div>
+    </div>
+
+    <!-- 自定义光标 -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+    <!-- 粒子背景 -->
+    <canvas id="particles" class="particles"></canvas>
+
+    <!-- 顶部导航 -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <div class="logo-mark">W</div>
+                <div class="logo-text">
+                    <span class="logo-en">WUTHERING WAVES</span>
+                    <span class="logo-cn">鸣 潮</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" data-section="hero">首页</a></li>
+                <li><a href="#characters" data-section="characters">角色</a></li>
+                <li><a href="#world" data-section="world">世界</a></li>
+                <li><a href="#news" data-section="news">资讯</a></li>
+                <li><a href="#download" data-section="download">下载</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-switch">
+                    <span class="active">中</span>
+                    <span>/</span>
+                    <span>EN</span>
+                </button>
+                <button class="nav-cta">
+                    <span>立即体验</span>
+                    <i class="cta-arrow">›</i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 侧边圆点 -->
+    <div class="side-dots">
+        <a href="#hero" class="dot active" data-label="首页"></a>
+        <a href="#characters" class="dot" data-label="角色"></a>
+        <a href="#world" class="dot" data-label="世界"></a>
+        <a href="#news" class="dot" data-label="资讯"></a>
+        <a href="#download" class="dot" data-label="下载"></a>
+    </div>
+
+    <!-- 主英雄区 -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-layer hero-layer-1"></div>
+            <div class="hero-layer hero-layer-2"></div>
+            <div class="hero-layer hero-layer-3"></div>
+            <div class="hero-glow"></div>
+        </div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="tag-line"></span>
+                <span class="tag-text">KURO GAMES · 库洛游戏</span>
+                <span class="tag-line"></span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-char" data-text="W">W</span>
+                <span class="title-char" data-text="U">U</span>
+                <span class="title-char" data-text="T">T</span>
+                <span class="title-char" data-text="H">H</span>
+                <span class="title-char" data-text="E">E</span>
+                <span class="title-char" data-text="R">R</span>
+                <span class="title-char" data-text="I">I</span>
+                <span class="title-char" data-text="N">N</span>
+                <span class="title-char" data-text="G">G</span>
+                <span class="title-space"></span>
+                <span class="title-char" data-text="W">W</span>
+                <span class="title-char" data-text="A">A</span>
+                <span class="title-char" data-text="V">V</span>
+                <span class="title-char" data-text="E">E</span>
+                <span class="title-char" data-text="S">S</span>
+            </h1>
+            <div class="hero-subtitle">鸣 · 潮</div>
+            <p class="hero-desc">在末世后的世界，作为「漂泊者」，与志同道合的伙伴一起踏上征程，<br>对抗未知的威胁，揭开属于自己的真相。</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-text">立即下载</span>
+                    <span class="btn-icon">↓</span>
+                </button>
+                <button class="btn btn-secondary">
+                    <span class="btn-bg"></span>
+                    <span class="btn-text">观看预告</span>
+                    <span class="btn-icon">▶</span>
+                </button>
+            </div>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <div class="meta-num">8.7</div>
+                    <div class="meta-label">玩家评分</div>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <div class="meta-num">2000万+</div>
+                    <div class="meta-label">预约人数</div>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                    <div class="meta-num">全平台</div>
+                    <div class="meta-label">同步公测</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- 角色展区 -->
+    <section class="characters" id="characters">
+        <div class="section-header">
+            <div class="section-num">01</div>
+            <div class="section-title-wrap">
+                <h2 class="section-title">共鸣者</h2>
+                <div class="section-en">RESONATORS</div>
+            </div>
+            <p class="section-desc">每位共鸣者都拥有独特的「声骸」之力，在末世中守护属于自己的信念</p>
+        </div>
+
+        <div class="char-tabs">
+            <button class="char-tab active" data-element="all">全部</button>
+            <button class="char-tab" data-element="spectro">衍射</button>
+            <button class="char-tab" data-element="havoc">湮灭</button>
+            <button class="char-tab" data-element="aero">气动</button>
+            <button class="char-tab" data-element="electro">导电</button>
+            <button class="char-tab" data-element="fusion">热熔</button>
+            <button class="char-tab" data-element="glacio">冷凝</button>
+        </div>
+
+        <div class="char-carousel">
+            <button class="char-nav char-prev" aria-label="prev">‹</button>
+            <div class="char-track" id="charTrack">
+                <div class="char-card" data-element="spectro" style="--c:#f9e58f;--c2:#d4a574">
+                    <div class="card-bg"></div>
+                    <div class="card-glow"></div>
+                    <div class="card-element">衍射</div>
+                    <div class="card-content">
+                        <div class="card-rank">★★★★★</div>
+                        <div class="card-name-cn">长离</div>
+                        <div class="card-name-en">Changli</div>
+                        <div class="card-quote">"火光所至，终将照亮黑暗"</div>
+                        <div class="card-weapon">武器 · 长刃</div>
+                    </div>
+                    <div class="card-portrait portrait-1"></div>
+                </div>
+                <div class="char-card" data-element="havoc" style="--c:#c084fc;--c2:#7c3aed">
+                    <div class="card-bg"></div>
+                    <div class="card-glow"></div>
+                    <div class="card-element">湮灭</div>
+                    <div class="card-content">
+                        <div class="card-rank">★★★★★</div>
+                        <div class="card-name-cn">漂泊者</div>
+                        <div class="card-name-en">Rover</div>
+                        <div class="card-quote">"我不记得过去，但我决定未来"</div>
+                        <div class="card-weapon">武器 · 长刃</div>
+                    </div>
+                    <div class="card-portrait portrait-2"></div>
+                </div>
+                <div class="char-card" data-element="aero" style="--c:#6ee7b7;--c2:#10b981">
+                    <div class="card-bg"></div>
+                    <div class="card-glow"></div>
+                    <div class="card-element">气动</div>
+                    <div class="card-content">
+                        <div class="card-rank">★★★★★</div>
+                        <div class="card-name-cn">吟霖</div>
+                        <div class="card-name-en">Yinlin</div>
+                        <div class="card-quote">"风从何处来，便往何处去"</div>
+                        <div class="card-weapon">武器 · 直剑</div>
+                    </div>
+                    <div class="card-portrait portrait-3"></div>
+                </div>
+                <div class="char-card" data-element="electro" style="--c:#a78bfa;--c2:#6366f1">
+                    <div class="card-bg"></div>
+                    <div class="card-glow"></div>
+                    <div class="card-element">导电</div>
+                    <div class="card-content">
+                        <div class="card-rank">★★★★★</div>
+                        <div class="card-name-cn">卡卡罗</div>
+                        <div class="card-name-en">Calcharo</div>
+                        <div class="card-quote">"复仇是我前行的唯一动力"</div>
+                        <div class="card-weapon">武器 · 长刃</div>
+                    </div>
+                    <div class="card-portrait portrait-4"></div>
+                </div>
+                <div class="char-card" data-element="fusion" style="--c:#fb923c;--c2:#dc2626">
+                    <div class="card-bg"></div>
+                    <div class="card-glow"></div>
+                    <div class="card-element">热熔</div>
+                    <div class="card-content">
+                        <div class="card-rank">★★★★★</div>
+                        <div class="card-name-cn">安可</div>
+                        <div class="card-name-en">Encore</div>
+                        <div class="card-quote">"嘿嘿！要不要尝尝魔法烤肉？"</div>
+                        <div class="card-weapon">武器 · 手套</div>
+                    </div>
+                    <div class="card-portrait portrait-5"></div>
+                </div>
+                <div class="char-card" data-element="glacio" style="--c:#7dd3fc;--c2:#0284c7">
+                    <div class="card-bg"></div>
+                    <div class="card-glow"></div>
+                    <div class="card-element">冷凝</div>
+                    <div class="card-content">
+                        <div class="card-rank">★★★★★</div>
+                        <div class="card-name-cn">鉴心</div>
+                        <div class="card-name-en">Jianxin</div>
+                        <div class="card-quote">"心如止水，万物归一"</div>
+                        <div class="card-weapon">武器 · 手套</div>
+                    </div>
+                    <div class="card-portrait portrait-6"></div>
+                </div>
+                <div class="char-card" data-element="fusion" style="--c:#fbbf24;--c2:#f59e0b">
+                    <div class="card-bg"></div>
+                    <div class="card-glow"></div>
+                    <div class="card-element">热熔</div>
+                    <div class="card-content">
+                        <div class="card-rank">★★★★★</div>
+                        <div class="card-name-cn">凌阳</div>
+                        <div class="card-name-en">Lingyang</div>
+                        <div class="card-quote">"舞动的雄狮，无所畏惧"</div>
+                        <div class="card-weapon">武器 · 手套</div>
+                    </div>
+                    <div class="card-portrait portrait-7"></div>
+                </div>
+                <div class="char-card" data-element="spectro" style="--c:#fde68a;--c2:#facc15">
+                    <div class="card-bg"></div>
+                    <div class="card-glow"></div>
+                    <div class="card-element">衍射</div>
+                    <div class="card-content">
+                        <div class="card-rank">★★★★★</div>
+                        <div class="card-name-cn">维里奈</div>
+                        <div class="card-name-en">Verina</div>
+                        <div class="card-quote">"愿光与你同行，温柔守护"</div>
+                        <div class="card-weapon">武器 · 增幅器</div>
+                    </div>
+                    <div class="card-portrait portrait-8"></div>
+                </div>
+            </div>
+            <button class="char-nav char-next" aria-label="next">›</button>
+        </div>
+    </section>
+
+    <!-- 世界观 -->
+    <section class="world" id="world">
+        <div class="world-bg">
+            <div class="world-mist"></div>
+            <div class="world-stars"></div>
+        </div>
+        <div class="section-header world-header">
+            <div class="section-num">02</div>
+            <div class="section-title-wrap">
+                <h2 class="section-title">瑝珑 · 末世之地</h2>
+                <div class="section-en">THE WORLD</div>
+            </div>
+        </div>
+        <div class="world-grid">
+            <div class="world-card" data-tilt>
+                <div class="world-card-num">01</div>
+                <div class="world-card-img world-img-1"></div>
+                <div class="world-card-content">
+                    <h3>今州城</h3>
+                    <p>东方风韵的繁华都城，匠心独运的建筑与雾气缭绕的山水交相辉映，传统与未来在此共生。</p>
+                </div>
+            </div>
+            <div class="world-card" data-tilt>
+                <div class="world-card-num">02</div>
+                <div class="world-card-img world-img-2"></div>
+                <div class="world-card-content">
+                    <h3>黄龙荒原</h3>
+                    <p>广袤无垠的旷野，残破的遗迹诉说着无声的过往，残响兽群在此游荡，等待无畏的探索者。</p>
+                </div>
+            </div>
+            <div class="world-card" data-tilt>
+                <div class="world-card-num">03</div>
+                <div class="world-card-img world-img-3"></div>
+                <div class="world-card-content">
+                    <h3>瑝珑天舟</h3>
+                    <p>悬于云端的古代飞舟，承载着失落的文明，在永恒的浮空中守望着大地。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 资讯区 -->
+    <section class="news" id="news">
+        <div class="section-header">
+            <div class="section-num">03</div>
+            <div class="section-title-wrap">
+                <h2 class="section-title">最新资讯</h2>
+                <div class="section-en">LATEST NEWS</div>
+            </div>
+        </div>
+        <div class="news-tabs">
+            <button class="news-tab active" data-tab="all">全部</button>
+            <button class="news-tab" data-tab="news">新闻</button>
+            <button class="news-tab" data-tab="event">活动</button>
+            <button class="news-tab" data-tab="notice">公告</button>
+        </div>
+        <div class="news-list" id="newsList">
+            <a class="news-item" data-cat="event">
+                <div class="news-img news-img-1">
+                    <span class="news-tag">活动</span>
+                </div>
+                <div class="news-body">
+                    <div class="news-date">2026.05.20</div>
+                    <h3>「梦境回响」限时活动开启！双倍声骸掉落</h3>
+                    <p>探索梦境深处，获取专属奖励，限时上线的精彩活动等你参与...</p>
+                </div>
+            </a>
+            <a class="news-item" data-cat="news">
+                <div class="news-img news-img-2">
+                    <span class="news-tag">新闻</span>
+                </div>
+                <div class="news-body">
+                    <div class="news-date">2026.05.18</div>
+                    <h3>1.5版本「潮汐之歌」前瞻特辑公开</h3>
+                    <p>新角色、新地图、新玩法，全新版本即将与玩家见面...</p>
+                </div>
+            </a>
+            <a class="news-item" data-cat="notice">
+                <div class="news-img news-img-3">
+                    <span class="news-tag">公告</span>
+                </div>
+                <div class="news-body">
+                    <div class="news-date">2026.05.15</div>
+                    <h3>5月22日全服停服维护更新公告</h3>
+                    <p>预计维护时间6小时，期间将更新1.5版本，请合理安排游戏时间...</p>
+                </div>
+            </a>
+            <a class="news-item" data-cat="event">
+                <div class="news-img news-img-4">
+                    <span class="news-tag">活动</span>
+                </div>
+                <div class="news-body">
+                    <div class="news-date">2026.05.12</div>
+                    <h3>共鸣者「长离」限定UP池现已上线</h3>
+                    <p>火焰之刃焚尽阴霾，与长离一同踏上征途...</p>
+                </div>
+            </a>
+            <a class="news-item" data-cat="news">
+                <div class="news-img news-img-5">
+                    <span class="news-tag">新闻</span>
+                </div>
+                <div class="news-body">
+                    <div class="news-date">2026.05.10</div>
+                    <h3>开发者日志 · 第七期</h3>
+                    <p>主创团队为你讲述战斗系统的设计理念与未来规划...</p>
+                </div>
+            </a>
+            <a class="news-item" data-cat="notice">
+                <div class="news-img news-img-6">
+                    <span class="news-tag">公告</span>
+                </div>
+                <div class="news-body">
+                    <div class="news-date">2026.05.08</div>
+                    <h3>关于打击外挂作弊行为的处罚公告</h3>
+                    <p>本次共封禁违规账号 1,287 个，营造公平的游戏环境...</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 下载区 -->
+    <section class="download" id="download">
+        <div class="download-bg"></div>
+        <div class="download-content">
+            <div class="section-num">04</div>
+            <h2 class="section-title download-title">立即开启冒险</h2>
+            <div class="section-en">DOWNLOAD NOW</div>
+            <p class="download-desc">全平台同步上线 · 数据互通 · 免费下载</p>
+
+            <div class="platforms">
+                <div class="platform">
+                    <div class="platform-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 12.5q0-.5.4-.9l1-.7q.3-.2.3-.6 0-.3-.3-.5l-1-.7q-.4-.4-.4-.9V4.4q0-.4-.4-.4H7.4Q7 4 7 4.4v3.8q0 .5-.4.9l-1 .7q-.3.2-.3.5 0 .4.3.6l1 .7q.4.4.4.9v6.4q0 1.5 1.5 1.5h7.5q1.5 0 1.5-1.5z"/></svg>
+                    </div>
+                    <div class="platform-name">Windows</div>
+                    <div class="platform-size">客户端 · 35GB</div>
+                </div>
+                <div class="platform">
+                    <div class="platform-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 2H7q-2 0-2 2v16q0 2 2 2h10q2 0 2-2V4q0-2-2-2zm-5 19q-.8 0-.8-.8t.8-.8.8.8-.8.8zm5-3H7V5h10v13z"/></svg>
+                    </div>
+                    <div class="platform-name">Android</div>
+                    <div class="platform-size">APK · 6GB</div>
+                </div>
+                <div class="platform">
+                    <div class="platform-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 2H7q-2 0-2 2v16q0 2 2 2h10q2 0 2-2V4q0-2-2-2zm-5 19q-.8 0-.8-.8t.8-.8.8.8-.8.8zm5-3H7V5h10v13z"/></svg>
+                    </div>
+                    <div class="platform-name">iOS</div>
+                    <div class="platform-size">App Store</div>
+                </div>
+                <div class="platform">
+                    <div class="platform-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 7H3q-1 0-1 1v8q0 1 1 1h18q1 0 1-1V8q0-1-1-1zM7 14H5v-4h2v4zm12 0h-2v-4h2v4z"/></svg>
+                    </div>
+                    <div class="platform-name">PS5</div>
+                    <div class="platform-size">PlayStation Store</div>
+                </div>
+            </div>
+
+            <div class="qr-block">
+                <div class="qr-code">
+                    <div class="qr-pattern"></div>
+                    <div class="qr-corner qr-tl"></div>
+                    <div class="qr-corner qr-tr"></div>
+                    <div class="qr-corner qr-bl"></div>
+                </div>
+                <div class="qr-info">
+                    <div class="qr-title">扫码下载移动端</div>
+                    <div class="qr-sub">iOS / Android 通用</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-brand">
+                <div class="footer-logo">
+                    <div class="logo-mark">W</div>
+                    <div>
+                        <div class="footer-en">WUTHERING WAVES</div>
+                        <div class="footer-cn">鸣 潮</div>
+                    </div>
+                </div>
+                <p class="footer-tagline">在末世的余响中，奏响属于你的潮鸣</p>
+                <div class="footer-social">
+                    <a class="social-link" title="微博">微</a>
+                    <a class="social-link" title="B站">B</a>
+                    <a class="social-link" title="抖音">抖</a>
+                    <a class="social-link" title="YouTube">Y</a>
+                    <a class="social-link" title="Twitter">T</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>游戏</h4>
+                <a>角色</a>
+                <a>世界</a>
+                <a>玩法</a>
+                <a>更新日志</a>
+            </div>
+            <div class="footer-col">
+                <h4>支持</h4>
+                <a>玩家社区</a>
+                <a>客户服务</a>
+                <a>意见反馈</a>
+                <a>常见问题</a>
+            </div>
+            <div class="footer-col">
+                <h4>关于</h4>
+                <a>库洛游戏</a>
+                <a>用户协议</a>
+                <a>隐私政策</a>
+                <a>商务合作</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 KURO GAMES 库洛游戏 · 保留所有权利</div>
+            <div class="footer-meta">健康游戏忠告 · 适龄提示 16+ · 出版备案号 ISBN 978-7-XXXX-XXXX-X</div>
+        </div>
+    </footer>
+
+    <!-- 音乐切换 -->
+    <button class="music-toggle" id="musicToggle" title="背景音乐">
+        <div class="music-bars">
+            <span></span><span></span><span></span><span></span>
+        </div>
+    </button>
+
+    <!-- 返回顶部 -->
+    <button class="back-top" id="backTop" title="返回顶部">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

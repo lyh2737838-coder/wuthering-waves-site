@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1a4870" stop-opacity="0.8"/>
+            <stop offset="40%" stop-color="#0c2848" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#050810" stop-opacity="1"/>
+        </linearGradient>
+        <radialGradient id="aura3" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#8be9fd" stop-opacity="0.7"/>
+            <stop offset="60%" stop-color="#5dd4dc" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#5dd4dc" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="hull3" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a4868"/>
+            <stop offset="100%" stop-color="#0a1428"/>
+        </linearGradient>
+        <filter id="glow3"><feGaussianBlur stdDeviation="4"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+
+    <rect width="600" height="800" fill="url(#sky3)"/>
+
+    <!-- 远处星云 -->
+    <ellipse cx="450" cy="200" rx="180" ry="80" fill="#5dd4dc" opacity="0.08"/>
+    <ellipse cx="150" cy="320" rx="200" ry="60" fill="#8be9fd" opacity="0.06"/>
+
+    <!-- 星点 -->
+    <g opacity="0.7">
+        <circle cx="80" cy="80" r="1" fill="#fff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="180" cy="120" r="1.5" fill="#fff"><animate attributeName="opacity" values="1;0.3;1" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="280" cy="60" r="1" fill="#8be9fd"><animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/></circle>
+        <circle cx="380" cy="100" r="1" fill="#fff"><animate attributeName="opacity" values="1;0.3;1" dur="3.5s" repeatCount="indefinite"/></circle>
+        <circle cx="500" cy="140" r="1.5" fill="#fff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="100" cy="200" r="1" fill="#fff"><animate attributeName="opacity" values="1;0.3;1" dur="2.8s" repeatCount="indefinite"/></circle>
+        <circle cx="220" cy="240" r="1.5" fill="#d4a574"><animate attributeName="opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="320" cy="280" r="1" fill="#fff"><animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="420" cy="300" r="1" fill="#fff"><animate attributeName="opacity" values="0.3;1;0.3" dur="3.5s" repeatCount="indefinite"/></circle>
+        <circle cx="550" cy="240" r="1.5" fill="#8be9fd"><animate attributeName="opacity" values="1;0.3;1" dur="2.5s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- 主天舟 -->
+    <g transform="translate(300, 420)">
+        <!-- 能量光环 -->
+        <ellipse cx="0" cy="40" rx="220" ry="60" fill="url(#aura3)">
+            <animate attributeName="rx" values="220;240;220" dur="6s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="4s" repeatCount="indefinite"/>
+        </ellipse>
+
+        <!-- 船底 -->
+        <path d="M-180,0 Q-140,40 0,50 Q140,40 180,0 Q160,-10 0,-15 Q-160,-10 -180,0 Z" fill="url(#hull3)" stroke="#5dd4dc" stroke-width="0.5"/>
+
+        <!-- 上层结构 -->
+        <path d="M-120,-15 L-100,-50 L100,-50 L120,-15 Z" fill="#0c1a30" stroke="#5dd4dc" stroke-width="0.5"/>
+        <path d="M-80,-50 L-70,-80 L70,-80 L80,-50 Z" fill="#0a1428" stroke="#5dd4dc" stroke-width="0.5"/>
+
+        <!-- 顶塔 -->
+        <rect x="-4" y="-110" width="8" height="30" fill="#0c1a30"/>
+        <polygon points="-8,-110 8,-110 0,-125" fill="#0c1a30"/>
+        <circle cx="0" cy="-118" r="2" fill="#8be9fd" filter="url(#glow3)">
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- 船身窗户 -->
+        <rect x="-150" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="-130" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="-110" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="-90" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)">
+            <animate attributeName="opacity" values="1;0.6;1" dur="3.5s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="-70" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="-50" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="-30" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="-10" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="10" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="30" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="50" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="70" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="90" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="110" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)">
+            <animate attributeName="opacity" values="1;0.6;1" dur="3.5s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="130" y="-8" width="6" height="3" fill="#8be9fd" filter="url(#glow3)"/>
+
+        <!-- 上层窗 -->
+        <rect x="-60" y="-45" width="4" height="6" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="-40" y="-45" width="4" height="6" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="-20" y="-45" width="4" height="6" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="0" y="-45" width="4" height="6" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="20" y="-45" width="4" height="6" fill="#8be9fd" filter="url(#glow3)"/>
+        <rect x="40" y="-45" width="4" height="6" fill="#8be9fd" filter="url(#glow3)"/>
+
+        <!-- 下方能量喷流 -->
+        <ellipse cx="-60" cy="55" rx="20" ry="6" fill="#8be9fd" opacity="0.5" filter="url(#glow3)">
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="60" cy="55" rx="20" ry="6" fill="#8be9fd" opacity="0.5" filter="url(#glow3)">
+            <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite"/>
+        </ellipse>
+
+        <animateTransform attributeName="transform" type="translate" values="300,420; 300,410; 300,420" dur="6s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 副天舟（远） -->
+    <g transform="translate(120, 600)" opacity="0.5">
+        <ellipse cx="0" cy="0" rx="60" ry="14" fill="url(#hull3)"/>
+        <rect x="-30" y="-10" width="60" height="6" fill="#0c1a30"/>
+        <circle cx="-15" cy="-7" r="1" fill="#8be9fd" filter="url(#glow3)"/>
+        <circle cx="0" cy="-7" r="1" fill="#8be9fd" filter="url(#glow3)"/>
+        <circle cx="15" cy="-7" r="1" fill="#8be9fd" filter="url(#glow3)"/>
+        <animateTransform attributeName="transform" type="translate" values="120,600; 120,595; 120,600" dur="8s" repeatCount="indefinite"/>
+    </g>
+
+    <g transform="translate(500, 650)" opacity="0.45">
+        <ellipse cx="0" cy="0" rx="50" ry="12" fill="url(#hull3)"/>
+        <rect x="-25" y="-8" width="50" height="5" fill="#0c1a30"/>
+        <circle cx="-10" cy="-6" r="1" fill="#8be9fd" filter="url(#glow3)"/>
+        <circle cx="10" cy="-6" r="1" fill="#8be9fd" filter="url(#glow3)"/>
+        <animateTransform attributeName="transform" type="translate" values="500,650; 500,640; 500,650" dur="9s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- 漂浮云雾 -->
+    <ellipse cx="300" cy="720" rx="500" ry="50" fill="#5dd4dc" opacity="0.05">
+        <animate attributeName="cx" values="300;380;300" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="200" cy="650" rx="350" ry="30" fill="#1a4870" opacity="0.15"/>
+</svg>

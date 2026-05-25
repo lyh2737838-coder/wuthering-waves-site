@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#d4a574" stop-opacity="0.4"/>
+            <stop offset="40%" stop-color="#2a1810" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#050810" stop-opacity="1"/>
+        </linearGradient>
+        <radialGradient id="lantern1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffeb8b" stop-opacity="1"/>
+            <stop offset="60%" stop-color="#d4a574" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#d4a574" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow1"><feGaussianBlur stdDeviation="4"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+
+    <rect width="600" height="800" fill="url(#sky1)"/>
+
+    <!-- 远山 -->
+    <path d="M0,420 L80,360 L160,400 L240,340 L320,380 L420,320 L500,380 L600,360 L600,800 L0,800 Z" fill="#1a1008" opacity="0.7"/>
+
+    <!-- 中景山 -->
+    <path d="M0,500 L60,450 L140,470 L220,420 L320,460 L420,410 L520,450 L600,430 L600,800 L0,800 Z" fill="#0c0804" opacity="0.85"/>
+
+    <!-- 远处塔 -->
+    <g fill="#050810" opacity="0.95">
+        <!-- 三层宝塔 1 -->
+        <g transform="translate(120, 350)">
+            <rect x="-3" y="-100" width="6" height="100"/>
+            <rect x="-15" y="-105" width="30" height="6"/>
+            <polygon points="-18,-105 18,-105 0,-120"/>
+            <rect x="-12" y="-70" width="24" height="3"/>
+            <polygon points="-15,-70 15,-70 0,-85"/>
+            <rect x="-10" y="-40" width="20" height="3"/>
+            <polygon points="-13,-40 13,-40 0,-55"/>
+            <circle cx="0" cy="-92" r="1.5" fill="#ffeb8b" filter="url(#glow1)">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="0" cy="-62" r="1.5" fill="#ffeb8b" filter="url(#glow1)">
+                <animate attributeName="opacity" values="1;0.6;1" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <!-- 大宝塔 中央 -->
+        <g transform="translate(300, 430)">
+            <rect x="-4" y="-180" width="8" height="180"/>
+            <rect x="-25" y="-185" width="50" height="8"/>
+            <polygon points="-30,-185 30,-185 0,-215"/>
+            <rect x="-20" y="-140" width="40" height="5"/>
+            <polygon points="-25,-140 25,-140 0,-160"/>
+            <rect x="-17" y="-100" width="34" height="5"/>
+            <polygon points="-22,-100 22,-100 0,-120"/>
+            <rect x="-14" y="-60" width="28" height="5"/>
+            <polygon points="-18,-60 18,-60 0,-80"/>
+            <circle cx="0" cy="-160" r="2" fill="#ffeb8b" filter="url(#glow1)">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="0" cy="-120" r="2" fill="#ffeb8b" filter="url(#glow1)">
+                <animate attributeName="opacity" values="1;0.7;1" dur="3.2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="0" cy="-80" r="2" fill="#ffeb8b" filter="url(#glow1)">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <!-- 右边小塔 -->
+        <g transform="translate(450, 380)">
+            <rect x="-3" y="-90" width="6" height="90"/>
+            <rect x="-12" y="-95" width="24" height="5"/>
+            <polygon points="-15,-95 15,-95 0,-108"/>
+            <rect x="-10" y="-60" width="20" height="3"/>
+            <polygon points="-13,-60 13,-60 0,-75"/>
+            <circle cx="0" cy="-82" r="1.5" fill="#ffeb8b" filter="url(#glow1)">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+    </g>
+
+    <!-- 飞舞的灯笼 -->
+    <g filter="url(#glow1)">
+        <circle cx="180" cy="280" r="8" fill="url(#lantern1)">
+            <animate attributeName="cy" values="280;260;280" dur="6s" repeatCount="indefinite"/>
+            <animate attributeName="cx" values="180;190;180" dur="8s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="380" cy="220" r="10" fill="url(#lantern1)">
+            <animate attributeName="cy" values="220;200;220" dur="7s" repeatCount="indefinite"/>
+            <animate attributeName="cx" values="380;370;380" dur="9s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="500" cy="300" r="7" fill="url(#lantern1)">
+            <animate attributeName="cy" values="300;285;300" dur="5.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="90" cy="350" r="6" fill="url(#lantern1)">
+            <animate attributeName="cy" values="350;335;350" dur="7s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="250" cy="200" r="5" fill="url(#lantern1)">
+            <animate attributeName="cy" values="200;185;200" dur="6.5s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- 雾 -->
+    <ellipse cx="300" cy="700" rx="400" ry="60" fill="#d4a574" opacity="0.08">
+        <animate attributeName="cx" values="300;350;300" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="200" cy="600" rx="300" ry="40" fill="#5dd4dc" opacity="0.04">
+        <animate attributeName="cx" values="200;250;200" dur="25s" repeatCount="indefinite"/>
+    </ellipse>
+</svg>

@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 600" preserveAspectRatio="xMidYMid meet">
+    <defs>
+        <radialGradient id="charAura" cx="50%" cy="40%" r="50%">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.4"/>
+            <stop offset="60%" stop-color="#fff" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.95"/>
+            <stop offset="50%" stop-color="#fff" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0.2"/>
+        </linearGradient>
+        <linearGradient id="capeGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="charGlow">
+            <feGaussianBlur stdDeviation="3"/>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="softGlow">
+            <feGaussianBlur stdDeviation="1.5"/>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+    </defs>
+
+    <!-- 背景元素符文（六边形阵） -->
+    <g transform="translate(190, 360)" opacity="0.25" stroke="#fff" fill="none" stroke-width="1">
+        <polygon points="0,-90 78,-45 78,45 0,90 -78,45 -78,-45">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="0,-65 56,-32 56,32 0,65 -56,32 -56,-32" stroke-dasharray="3 4">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="30s" repeatCount="indefinite"/>
+        </polygon>
+        <circle r="40" stroke-dasharray="2 6">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="20" fill="#fff" opacity="0.1"/>
+    </g>
+
+    <!-- 光晕 -->
+    <ellipse cx="190" cy="280" rx="140" ry="200" fill="url(#charAura)">
+        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- 角色剪影 -->
+    <g transform="translate(190, 0)">
+        <!-- 披风/裙摆背景 -->
+        <path d="M-70,440 Q-90,500 -85,580 L85,580 Q90,500 70,440 Q40,460 0,460 Q-40,460 -70,440 Z" fill="url(#capeGrad)" opacity="0.6"/>
+
+        <!-- 头部 -->
+        <ellipse cx="0" cy="180" rx="22" ry="26" fill="url(#bodyGrad)"/>
+
+        <!-- 头发 -->
+        <path d="M-26,170 Q-30,150 -22,140 Q-15,130 0,128 Q15,130 22,140 Q30,150 26,170 Q24,165 18,158 Q10,155 0,155 Q-10,155 -18,158 Q-24,165 -26,170 Z" fill="#fff" opacity="0.85"/>
+        <!-- 长发飘动 -->
+        <path d="M-22,175 Q-35,220 -30,280 Q-25,260 -20,200 Z" fill="#fff" opacity="0.6">
+            <animate attributeName="d" values="M-22,175 Q-35,220 -30,280 Q-25,260 -20,200 Z; M-22,175 Q-38,225 -32,285 Q-25,260 -20,200 Z; M-22,175 Q-35,220 -30,280 Q-25,260 -20,200 Z" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <path d="M22,175 Q35,220 30,280 Q25,260 20,200 Z" fill="#fff" opacity="0.6">
+            <animate attributeName="d" values="M22,175 Q35,220 30,280 Q25,260 20,200 Z; M22,175 Q38,225 32,285 Q25,260 20,200 Z; M22,175 Q35,220 30,280 Q25,260 20,200 Z" dur="4s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- 脖子 -->
+        <rect x="-6" y="200" width="12" height="14" fill="url(#bodyGrad)"/>
+
+        <!-- 肩膀+护肩 -->
+        <path d="M-50,225 Q-55,215 -45,210 L-15,210 L-15,225 Z" fill="url(#bodyGrad)"/>
+        <path d="M50,225 Q55,215 45,210 L15,210 L15,225 Z" fill="url(#bodyGrad)"/>
+
+        <!-- 身躯 -->
+        <path d="M-40,225 Q-45,290 -35,360 L35,360 Q45,290 40,225 L15,215 L-15,215 Z" fill="url(#bodyGrad)"/>
+
+        <!-- 腰带 -->
+        <rect x="-38" y="350" width="76" height="8" fill="#fff" opacity="0.5"/>
+        <circle cx="0" cy="354" r="5" fill="#fff" opacity="0.9" filter="url(#softGlow)">
+            <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- 手臂 -->
+        <path d="M-50,225 Q-65,280 -70,340 Q-72,360 -65,365 Q-58,360 -55,340 Q-50,285 -45,235 Z" fill="url(#bodyGrad)"/>
+        <path d="M50,225 Q65,280 70,340 Q72,360 65,365 Q58,360 55,340 Q50,285 45,235 Z" fill="url(#bodyGrad)"/>
+
+        <!-- 长刃武器（背后） -->
+        <g transform="translate(60, 280) rotate(20)">
+            <rect x="-2" y="-120" width="4" height="180" fill="#fff" opacity="0.85"/>
+            <polygon points="-3,-120 3,-120 0,-138" fill="#fff" opacity="0.9"/>
+            <rect x="-5" y="58" width="10" height="14" fill="#fff" opacity="0.8"/>
+            <circle cx="0" cy="65" r="3" fill="#fff" opacity="1" filter="url(#softGlow)">
+                <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <!-- 刀刃光泽 -->
+            <line x1="0" y1="-120" x2="0" y2="55" stroke="#fff" stroke-width="0.5" opacity="0.9"/>
+        </g>
+
+        <!-- 腿/下裾 -->
+        <path d="M-35,360 Q-40,400 -45,440 L-10,440 L-5,360 Z" fill="url(#bodyGrad)" opacity="0.85"/>
+        <path d="M35,360 Q40,400 45,440 L10,440 L5,360 Z" fill="url(#bodyGrad)" opacity="0.85"/>
+
+        <!-- 元素符文胸前 -->
+        <g transform="translate(0, 280)" filter="url(#softGlow)">
+            <polygon points="0,-12 10,-4 10,8 0,15 -10,8 -10,-4" fill="#fff" opacity="0.95">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+            </polygon>
+            <circle r="3" fill="#fff" opacity="1"/>
+        </g>
+    </g>
+
+    <!-- 浮动粒子 -->
+    <g filter="url(#softGlow)">
+        <circle cx="80" cy="200" r="2" fill="#fff" opacity="0.8">
+            <animate attributeName="cy" values="200;160;200" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="60" cy="320" r="1.5" fill="#fff" opacity="0.6">
+            <animate attributeName="cy" values="320;280;320" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="320" cy="240" r="2" fill="#fff" opacity="0.8">
+            <animate attributeName="cy" values="240;200;240" dur="5.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="5.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="340" cy="380" r="1.5" fill="#fff" opacity="0.6">
+            <animate attributeName="cy" values="380;340;380" dur="6.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="450" r="2" fill="#fff" opacity="0.7">
+            <animate attributeName="cy" values="450;410;450" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="280" cy="480" r="1.5" fill="#fff" opacity="0.5">
+            <animate attributeName="cy" values="480;440;480" dur="5.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="40" cy="380" r="1" fill="#fff" opacity="0.6">
+            <animate attributeName="cy" values="380;350;380" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="350" cy="160" r="1" fill="#fff" opacity="0.5">
+            <animate attributeName="cy" values="160;130;160" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="180" cy="120" r="1.5" fill="#fff" opacity="0.7">
+            <animate attributeName="cy" values="120;90;120" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="220" cy="100" r="1" fill="#fff" opacity="0.5">
+            <animate attributeName="cy" values="100;70;100" dur="5s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- 底部光带 -->
+    <ellipse cx="190" cy="560" rx="120" ry="14" fill="#fff" opacity="0.25" filter="url(#charGlow)">
+        <animate attributeName="rx" values="120;140;120" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.15;0.35;0.15" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+</svg>

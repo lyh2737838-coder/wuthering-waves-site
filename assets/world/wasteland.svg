@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#7a5028" stop-opacity="0.6"/>
+            <stop offset="40%" stop-color="#3a2818" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#050810" stop-opacity="1"/>
+        </linearGradient>
+        <radialGradient id="sun2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+            <stop offset="50%" stop-color="#d4a574" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#d4a574" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow2"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+
+    <rect width="600" height="800" fill="url(#sky2)"/>
+
+    <!-- 远日 -->
+    <circle cx="450" cy="280" r="80" fill="url(#sun2)"/>
+    <circle cx="450" cy="280" r="35" fill="#fbbf24" opacity="0.5"/>
+    <circle cx="450" cy="280" r="20" fill="#fde68a" opacity="0.7" filter="url(#glow2)"/>
+
+    <!-- 远山 -->
+    <path d="M0,430 L80,380 L180,410 L260,360 L360,400 L460,370 L560,400 L600,390 L600,800 L0,800 Z" fill="#2a1810" opacity="0.7"/>
+
+    <!-- 中景沙丘 -->
+    <path d="M0,540 L100,490 L220,520 L340,470 L460,510 L580,480 L600,500 L600,800 L0,800 Z" fill="#1a1008" opacity="0.85"/>
+
+    <!-- 近景荒原 -->
+    <path d="M0,650 L120,610 L260,640 L400,605 L520,635 L600,620 L600,800 L0,800 Z" fill="#0a0604" opacity="0.95"/>
+
+    <!-- 残破遗迹 -->
+    <g fill="#050810" opacity="0.95">
+        <!-- 断柱 1 -->
+        <g transform="translate(150, 600)">
+            <rect x="-6" y="-80" width="12" height="80"/>
+            <rect x="-10" y="-85" width="20" height="6"/>
+            <polygon points="-12,-80 12,-80 6,-65 -6,-65" fill="#1a1008"/>
+            <!-- 裂纹 -->
+            <line x1="-2" y1="-60" x2="2" y2="-30" stroke="#1a1008" stroke-width="0.5"/>
+        </g>
+
+        <!-- 大型遗迹建筑 -->
+        <g transform="translate(320, 580)">
+            <rect x="-40" y="-120" width="80" height="120"/>
+            <rect x="-45" y="-125" width="90" height="8"/>
+            <polygon points="-50,-125 50,-125 35,-150 -35,-150" fill="#1a1008"/>
+            <!-- 拱门 -->
+            <path d="M-20,-30 L-20,-70 Q-20,-85 0,-85 Q20,-85 20,-70 L20,-30 Z" fill="#020408"/>
+            <!-- 窗户 -->
+            <rect x="-32" y="-100" width="8" height="12" fill="#fbbf24" opacity="0.4" filter="url(#glow2)">
+                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="24" y="-100" width="8" height="12" fill="#fbbf24" opacity="0.3" filter="url(#glow2)">
+                <animate attributeName="opacity" values="0.6;0.3;0.6" dur="4.5s" repeatCount="indefinite"/>
+            </rect>
+            <!-- 裂纹 -->
+            <line x1="-10" y1="-110" x2="-5" y2="-90" stroke="#1a1008" stroke-width="0.6"/>
+            <line x1="15" y1="-115" x2="20" y2="-95" stroke="#1a1008" stroke-width="0.6"/>
+        </g>
+
+        <!-- 断柱 2 -->
+        <g transform="translate(450, 610)">
+            <rect x="-5" y="-60" width="10" height="60"/>
+            <rect x="-9" y="-65" width="18" height="5"/>
+            <polygon points="-12,-65 12,-65 0,-78"/>
+        </g>
+
+        <!-- 断柱 3 倒地 -->
+        <g transform="translate(80, 630)">
+            <rect x="-30" y="-8" width="60" height="10" transform="rotate(-15)"/>
+        </g>
+
+        <!-- 远处遗迹 -->
+        <g transform="translate(540, 540)" opacity="0.6">
+            <rect x="-4" y="-50" width="8" height="50"/>
+            <polygon points="-8,-50 8,-50 0,-60"/>
+        </g>
+    </g>
+
+    <!-- 残响光球 -->
+    <g filter="url(#glow2)">
+        <circle cx="250" cy="450" r="4" fill="#d4a574" opacity="0.8">
+            <animate attributeName="cy" values="450;430;450" dur="5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="420" cy="500" r="3" fill="#d4a574" opacity="0.6">
+            <animate attributeName="cy" values="500;480;500" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="480" r="3" fill="#d4a574" opacity="0.7">
+            <animate attributeName="cy" values="480;460;480" dur="5.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="380" cy="420" r="2.5" fill="#fbbf24" opacity="0.5">
+            <animate attributeName="cy" values="420;405;420" dur="4.5s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+
+    <!-- 沙尘雾 -->
+    <ellipse cx="300" cy="720" rx="500" ry="60" fill="#d4a574" opacity="0.08">
+        <animate attributeName="cx" values="300;400;300" dur="22s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="180" cy="650" rx="350" ry="40" fill="#7a5028" opacity="0.1">
+        <animate attributeName="cx" values="180;280;180" dur="28s" repeatCount="indefinite"/>
+    </ellipse>
+</svg>
